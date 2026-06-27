@@ -18,7 +18,7 @@ Keine Installation nötig — die `.exe` einfach in einen festen Ordner legen un
 
 ## Was kann WellDone!?
 
-Erfasst Proben, belegt automatisch die PCR-Platte, erzeugt das **Pipettierschema (PDF)** und das **Plate-Setup (CSV)** für die LightCycler-PRO-Software — und kann den **Auftrag (Order) für die MagNA Pure 96** erstellen. Oberfläche und Handbuch in **Deutsch & Englisch**.
+Erfasst Proben, belegt automatisch die PCR-Platte, erzeugt das **Pipettierschema (PDF)** und das **Plate-Setup (CSV)** für die LightCycler-PRO-Software — und kann den **Auftrag für den MagNA Pure 96** erstellen. Oberfläche und Handbuch in **Deutsch & Englisch**.
 
 ## ⚠️ Wichtiger Hinweis
 
@@ -30,7 +30,7 @@ Feedback & Fehlerberichte: [well.done.pcr.setup@gmail.com](mailto:well.done.pcr.
 
 ## Lizenz / Weitergabe
 
-Freie, private Weitergabe erwünscht; **kein Verkauf / kein kommerzieller Vertrieb**. WellDone! nutzt quelloffene Bibliotheken (PySide6/Qt — GNU LGPL v3; ReportLab — BSD). „Roche" und „LightCycler" sind Marken der jeweiligen Inhaber; WellDone! ist ein **unabhängiges** Werkzeug, **nicht** von Roche geprüft oder unterstützt.
+Freie, private Weitergabe erwünscht; **kein Verkauf / kein kommerzieller Vertrieb**. WellDone! nutzt quelloffene Bibliotheken (PySide6/Qt — GNU LGPL v3; ReportLab — BSD). „Roche" und „LightCycler" sind Marken der jeweiligen Inhaber; WellDone! ist ein **unabhängiges, privates Projekt**, **nicht** von Roche geprüft oder verantwortet.
 
 ---
 

@@ -5,12 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WellDone! — Download</title>
 <meta name="description" content="WellDone! — kostenloses, offline laufendes Windows-Werkzeug für die Plattenbelegung am Roche LightCycler PRO.">
+<link rel="icon" type="image/png" href="welldone.png">
 <style>
   :root{ --blue:#16527E; --accent:#27AE60; --ink:#243038; --muted:#6b7785; --line:#e3e8ee; --warn-bg:#FFF6E5; --warn-br:#E0B870; --warn-ink:#7A4F01; }
   *{ box-sizing:border-box; }
   body{ margin:0; font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif; color:var(--ink); background:#f6f8fb; line-height:1.55; }
   .wrap{ max-width:960px; margin:0 auto; padding:0 20px; }
-  header{ background:linear-gradient(160deg,#1d6fb0,#16527E); color:#fff; padding:54px 0 46px; text-align:center; }
+  header{ background:linear-gradient(160deg,#1d6fb0,#16527E); color:#fff; padding:46px 0 44px; text-align:center; }
+  .logo{ width:92px; height:92px; border-radius:20px; background:#fff; padding:7px; box-shadow:0 4px 14px rgba(0,0,0,.22); margin-bottom:10px; }
   header h1{ margin:0; font-size:46px; letter-spacing:.5px; }
   .tagline{ margin:6px 0 2px; font-size:20px; font-weight:600; opacity:.97; }
   .sub{ margin:0 auto; max-width:620px; opacity:.9; }
@@ -20,9 +22,11 @@
   .meta{ font-size:14px; opacity:.9; margin:6px 0 0; }
   .meta a{ color:#dcefff; }
   section{ padding:34px 0; border-bottom:1px solid var(--line); }
-  .shot{ text-align:center; background:#fff; }
-  .shot img{ max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; box-shadow:0 6px 22px rgba(20,40,70,.10); }
+  .imgbox{ text-align:center; background:#fff; }
+  .imgbox img{ max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; box-shadow:0 6px 22px rgba(20,40,70,.10); }
   h2{ color:var(--blue); font-size:24px; margin:0 0 14px; }
+  .center{ text-align:center; }
+  .lead{ color:var(--muted); max-width:680px; margin:0 auto 18px; }
   ul.feat{ margin:0; padding-left:0; list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px 26px; }
   ul.feat li{ padding-left:26px; position:relative; }
   ul.feat li::before{ content:"✓"; color:var(--accent); font-weight:800; position:absolute; left:0; }
@@ -32,8 +36,15 @@
   .card ol{ margin:8px 0 0; padding-left:20px; }
   .card a{ color:#1565C0; }
   .warn{ background:var(--warn-bg); border:1px solid var(--warn-br); color:var(--warn-ink); border-radius:8px; padding:16px 18px; }
-  .share{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
-  .share img{ width:140px; height:140px; border:1px solid var(--line); border-radius:8px; background:#fff; padding:6px; }
+  .share{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  .share code{ background:#eef2f7; border:1px solid var(--line); border-radius:6px; padding:9px 13px; font-size:15px; color:var(--ink); }
+  .copybtn,.mailbtn{ font-size:15px; font-weight:600; padding:9px 16px; border-radius:7px; cursor:pointer; text-decoration:none; border:1px solid var(--blue); }
+  .copybtn{ background:#fff; color:var(--blue); }
+  .copybtn:hover{ background:#eef4fa; }
+  .mailbtn{ background:var(--blue); color:#fff; border-color:var(--blue); }
+  .mailbtn:hover{ background:#123f60; }
+  .flyer{ margin-top:16px; }
+  .flyer a{ color:#1565C0; font-weight:600; }
   footer{ padding:30px 0 50px; color:var(--muted); font-size:14px; text-align:center; }
   footer a{ color:#1565C0; }
   .en{ color:var(--muted); font-size:14px; font-style:italic; }
@@ -44,6 +55,7 @@
 
 <header>
   <div class="wrap">
+    <img class="logo" src="welldone.png" alt="WellDone! Logo">
     <h1>WellDone!</h1>
     <p class="tagline">Plattenbelegung für den Roche LightCycler PRO</p>
     <p class="sub">Ein kostenloses, vollständig <strong>offline</strong> laufendes Windows-Werkzeug fürs PCR-Setup.</p>
@@ -53,7 +65,7 @@
   </div>
 </header>
 
-<section class="shot">
+<section class="imgbox">
   <div class="wrap"><img src="screenshot.png" alt="WellDone! — Hauptfenster mit Proben-Platte, Assay-Bibliothek und belegter PCR-Platte"></div>
 </section>
 
@@ -64,10 +76,18 @@
       <li>Proben erfassen (manuell, Barcode-Scanner oder MP96-Import)</li>
       <li>PCR-Platte automatisch belegen (96 &amp; 384)</li>
       <li>Pipettierschema als <strong>PDF</strong> erzeugen</li>
-      <li>Plate-Setup-<strong>CSV</strong> für die LightCycler-PRO-Software</li>
-      <li>Auftrag (Order) für die <strong>MagNA Pure 96</strong> erstellen</li>
+      <li>Plate-Setup-<strong>CSV</strong> für den einfachen Import beim LightCycler PRO</li>
+      <li>Auftrag für den <strong>MagNA Pure 96</strong> erstellen</li>
       <li>Oberfläche &amp; Handbuch in <strong>Deutsch &amp; Englisch</strong></li>
     </ul>
+  </div>
+</section>
+
+<section class="imgbox">
+  <div class="wrap">
+    <h2 class="center">Fertige Ausgabe: das Pipettierschema</h2>
+    <p class="lead">Auf Knopfdruck als PDF — MasterMix-Tabelle und Plattenübersicht, farblich passend zur Belegung.</p>
+    <img src="pipetting.png" alt="Pipettierschema-PDF: MasterMix-Tabelle und Plattenübersicht">
   </div>
 </section>
 
@@ -91,12 +111,15 @@
 </section>
 
 <section>
-  <div class="wrap share">
-    <img src="qr.png" alt="QR-Code zu dieser Seite">
-    <div>
-      <h2 style="margin-bottom:6px;">Im Labor teilen</h2>
-      <p style="margin:0; color:var(--muted);">QR-Code scannen führt direkt hierher — ideal für Aushang, Folie oder E-Mail-Signatur.</p>
+  <div class="wrap">
+    <h2>Weitergeben</h2>
+    <p>Diesen Link an Kolleginnen und Kollegen weitergeben:</p>
+    <div class="share">
+      <code>welldone-prompter.github.io/WellDone</code>
+      <button class="copybtn" onclick="copyUrl(this)">🔗 Link kopieren</button>
+      <a class="mailbtn" href="#" onclick="shareEmail();return false;">✉ Per E-Mail empfehlen</a>
     </div>
+    <p class="flyer">📄 <a href="flyer.pdf">Flyer zum Aushängen (PDF)</a> — mit QR-Code fürs Schwarze Brett im Labor (Handy scannt, Link landet im Postfach).</p>
   </div>
 </section>
 
@@ -115,12 +138,28 @@
     <p>Feedback &amp; Fehlerberichte: <a href="mailto:well.done.pcr.setup@gmail.com">well.done.pcr.setup@gmail.com</a>
       · <a href="https://forms.gle/9QYvGAw1AXsfxYRk8">Online-Formular</a></p>
     <p>Freie, private Weitergabe erwünscht · <strong>kein Verkauf / kein kommerzieller Vertrieb</strong>.<br>
-      „Roche" und „LightCycler" sind Marken der jeweiligen Inhaber. WellDone! ist ein unabhängiges Werkzeug, nicht von Roche geprüft.</p>
+      „Roche" und „LightCycler" sind Marken der jeweiligen Inhaber. WellDone! ist ein <strong>unabhängiges, privates Projekt</strong>,
+      nicht von Roche geprüft oder verantwortet.</p>
     <p class="en">English — WellDone! is a free, fully offline Windows tool for PCR setup on the Roche LightCycler PRO.
       <a href="https://github.com/WellDone-PROmpter/WellDone/releases/latest/download/WellDone.exe">Download WellDone.exe</a>.
-      Helper tool — not a medical device, not validated; check every run.</p>
+      Helper tool — not a medical device, not validated; check every run. An independent, private project, not reviewed or endorsed by Roche.</p>
   </div>
 </footer>
+
+<script>
+function copyUrl(btn){
+  navigator.clipboard.writeText("https://welldone-prompter.github.io/WellDone/").then(function(){
+    var t = btn.textContent; btn.textContent = "✓ Kopiert"; setTimeout(function(){ btn.textContent = t; }, 1500);
+  });
+}
+function shareEmail(){
+  var s = "Tipp: WellDone! für das PCR-Setup";
+  var b = "Hallo,\n\nWellDone! ist ein kostenloses Windows-Tool für die Plattenbelegung am Roche LightCycler PRO "
+        + "(Pipettierschema, Plate-Setup-CSV, MagNA-Pure-96-Auftrag).\n\nDownload und Infos:\n"
+        + "https://welldone-prompter.github.io/WellDone/\n";
+  location.href = "mailto:?subject=" + encodeURIComponent(s) + "&body=" + encodeURIComponent(b);
+}
+</script>
 
 </body>
 </html>
