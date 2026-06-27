@@ -59,7 +59,7 @@
     <h1>WellDone!</h1>
     <p class="tagline">Plattenbelegung für den Roche LightCycler PRO</p>
     <p class="sub">Ein kostenloses, vollständig <strong>offline</strong> laufendes Windows-Werkzeug fürs PCR-Setup.</p>
-    <a class="btn" href="https://github.com/WellDone-PROmpter/WellDone/releases/latest/download/WellDone.exe">⬇&nbsp;&nbsp;WellDone.exe herunterladen</a>
+    <a id="dlbtn" class="btn" href="https://github.com/WellDone-PROmpter/WellDone/releases/latest">⬇&nbsp;&nbsp;WellDone! herunterladen</a>
     <p class="meta">Immer die neueste Version · keine Installation · keine Administratorrechte<br>
       <a href="https://github.com/WellDone-PROmpter/WellDone/releases">Alle Versionen &amp; Änderungen ansehen</a></p>
   </div>
@@ -113,12 +113,12 @@
 <section>
   <div class="wrap">
     <h2>Weitergeben</h2>
-    <p>Diesen Link an Kolleginnen und Kollegen weitergeben:</p>
+    <p><strong>Weitergabe ist explizit erwünscht!</strong></p>
     <div class="share">
       <code>welldone-prompter.github.io/WellDone</code>
       <button class="copybtn" onclick="copyUrl(this)">🔗 Link kopieren</button>
     </div>
-    <p class="flyer">📄 <a href="flyer.pdf">Flyer zum Aushängen (PDF)</a> — mit QR-Code fürs Schwarze Brett im Labor (Handy scannt, Link landet im Postfach).</p>
+    <p class="flyer">📄 <a href="flyer.pdf">QR-Code-Flyer (PDF)</a></p>
   </div>
 </section>
 
@@ -137,7 +137,7 @@
     <p>Feedback &amp; Fehlerberichte: <a href="mailto:well.done.pcr.setup@gmail.com">well.done.pcr.setup@gmail.com</a>
       · <a href="https://forms.gle/9QYvGAw1AXsfxYRk8">Online-Formular</a></p>
     <p>Freie, private Weitergabe erwünscht · <strong>kein Verkauf / kein kommerzieller Vertrieb</strong>.<br>
-      „Roche" und „LightCycler" sind Marken der jeweiligen Inhaber. WellDone! ist ein <strong>unabhängiges, privates Projekt</strong>,
+      „Roche", „LightCycler" und „MagNA Pure" sind Marken der jeweiligen Inhaber. WellDone! ist ein <strong>unabhängiges, privates Projekt</strong>,
       nicht von Roche geprüft oder verantwortet.</p>
     <p class="en">English — WellDone! is a free, fully offline Windows tool for PCR setup on the Roche LightCycler PRO.
       <a href="https://github.com/WellDone-PROmpter/WellDone/releases/latest/download/WellDone.exe">Download WellDone.exe</a>.
@@ -151,6 +151,14 @@ function copyUrl(btn){
     var t = btn.textContent; btn.textContent = "✓ Kopiert"; setTimeout(function(){ btn.textContent = t; }, 1500);
   });
 }
+// Download-Knopf auf die direkte, versionierte .exe der neuesten Release heben
+// (Fallback bleibt die Releases-Seite, falls die GitHub-API mal nicht antwortet).
+fetch("https://api.github.com/repos/WellDone-PROmpter/WellDone/releases/latest")
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    var a = (d.assets || []).find(function(x){ return x.name && x.name.toLowerCase().endsWith(".exe"); });
+    if(a && a.browser_download_url){ document.getElementById("dlbtn").href = a.browser_download_url; }
+  }).catch(function(){});
 </script>
 
 </body>
