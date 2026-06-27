@@ -117,7 +117,6 @@
     <div class="share">
       <code>welldone-prompter.github.io/WellDone</code>
       <button class="copybtn" onclick="copyUrl(this)">🔗 Link kopieren</button>
-      <a class="mailbtn" href="#" onclick="shareEmail();return false;">✉ Per E-Mail empfehlen</a>
     </div>
     <p class="flyer">📄 <a href="flyer.pdf">Flyer zum Aushängen (PDF)</a> — mit QR-Code fürs Schwarze Brett im Labor (Handy scannt, Link landet im Postfach).</p>
   </div>
@@ -151,13 +150,6 @@ function copyUrl(btn){
   navigator.clipboard.writeText("https://welldone-prompter.github.io/WellDone/").then(function(){
     var t = btn.textContent; btn.textContent = "✓ Kopiert"; setTimeout(function(){ btn.textContent = t; }, 1500);
   });
-}
-function shareEmail(){
-  var s = "Tipp: WellDone! für das PCR-Setup";
-  var b = "Hallo,\n\nWellDone! ist ein kostenloses Windows-Tool für die Plattenbelegung am Roche LightCycler PRO "
-        + "(Pipettierschema, Plate-Setup-CSV, MagNA-Pure-96-Auftrag).\n\nDownload und Infos:\n"
-        + "https://welldone-prompter.github.io/WellDone/\n";
-  location.href = "mailto:?subject=" + encodeURIComponent(s) + "&body=" + encodeURIComponent(b);
 }
 </script>
 
