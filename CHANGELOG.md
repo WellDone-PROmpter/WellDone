@@ -2,6 +2,10 @@
 
 Neueste Version oben. Aktuelle Releases & Download: https://welldone-prompter.github.io/WellDone/
 
+**Version 10.5** (Juni 2026)
+- **Schwester-App verlinkt:** Der **„❓"-Dialog (Über / Hilfe)** verweist jetzt direkt auf **PROmpter** – die Schwester-App für die **Auswertung nach dem Lauf** (PDF-Bericht & Excel). *WellDone! = Vorbereitung, PROmpter = Auswertung.*
+- **Handbuch aktualisiert:** Marken-Hinweis ergänzt („Roche, LightCycler und MagNA Pure sind Marken der jeweiligen Inhaber") und WellDone! als **unabhängiges, privates Projekt** klargestellt (nicht von Roche geprüft oder verantwortet).
+
 **Version 10.4** (Juni 2026)
 - **Englisches Handbuch (neu):** Das Handbuch liegt jetzt auch auf **Englisch** vor und öffnet automatisch in der gewählten Sprache (deutsche Oberfläche → deutsches Handbuch, englische Oberfläche → englisches Handbuch).
 - **Einheitliche Farben im Pipettierschema:** Die **MasterMix-Tabelle** nutzt jetzt dieselben Farben wie die **Plattenbelegung** – die „gesamt"-Spalte in der **vollen Assay-Farbe** der Proben-Wells, die „je 1 Rkt"-Spalte im **aufgehellten NTC-Ton** (Schrift automatisch hell/dunkel für gute Lesbarkeit). So lassen sich Tabelle und Platte auf einen Blick einander zuordnen.
