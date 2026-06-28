@@ -1,0 +1,6 @@
+# Binärdateien nie zeilenende-normalisieren (sonst PDF-/EXE-Korruption beim Checkout/Klonen)
+*.pdf binary
+*.png binary
+*.ico binary
+*.exe binary
+*.db  binary
