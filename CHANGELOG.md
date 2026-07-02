@@ -2,6 +2,9 @@
 
 Neueste Version oben. Aktuelle Releases & Download: https://welldone-prompter.github.io/WellDone/
 
+**Version 10.6** (Juli 2026)
+- **MagNA Pure 24 wird unterstützt:** Der Proben-Import liest jetzt auch die **Ergebnis-XML der MagNA Pure 24** – dasselbe pro-Lauf-Format wie bei der MagNA Pure 96 (die 24 Proben liegen in 8er-Streifen, Positionen A1–H3, und landen genau dort auf der Proben-Platte). Der Datumsbereich-Export „MP24SampleResults…csv" mit mehreren Läufen wird (noch) nicht unterstützt – bitte die einzelne Lauf-XML nehmen. Platzhalter „n/a" in leeren Feldern werden nicht mehr in „Quellplatte-ID"/Prep-Notes übernommen.
+
 **Version 10.5** (Juni 2026)
 - **Schwester-App verlinkt:** Der **„❓"-Dialog (Über / Hilfe)** verweist jetzt direkt auf **PROmpter** – die Schwester-App für die **Auswertung nach dem Lauf** (PDF-Bericht & Excel). *WellDone! = Vorbereitung, PROmpter = Auswertung.*
 - **Handbuch aktualisiert:** Marken-Hinweis ergänzt („Roche, LightCycler und MagNA Pure sind Marken der jeweiligen Inhaber") und WellDone! als **unabhängiges, privates Projekt** klargestellt (nicht von Roche geprüft oder verantwortet).
