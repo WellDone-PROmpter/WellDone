@@ -2,6 +2,9 @@
 
 Neueste Version oben. Aktuelle Releases & Download: https://welldone-prompter.github.io/WellDone/
 
+**Version 10.7** (Juli 2026)
+- **Export für den LightCycler 480 (neu):** Über **📤 Setup LC** lässt sich die Plattenbelegung jetzt auch für den **LightCycler 480** speichern (Dateityp im Speichern-Dialog wählen; Ordner + zuletzt gewählter Dateityp werden gemerkt). WellDone! schreibt die **Sample-Editor-Importdatei** (tab-getrennt) mit Position, Probenname, **Assay** (Spalte „Sample Note"), Probentyp (Unknown/Standard/Positiv-/Negativ-Kontrolle) und der **Assay-Farbe** – so gruppiert der LC480 die Platte nach Assay. In der LC480-Software über **Sample Editor → Import** einlesen. Der LC480 kennt keine LCAPs; Detektionsformat/Programm und die Kanäle wählst du wie gewohnt am Gerät.
+
 **Version 10.6** (Juli 2026)
 - **MagNA Pure 24 wird unterstützt:** Der Proben-Import liest jetzt auch die **Ergebnis-XML der MagNA Pure 24** – dasselbe pro-Lauf-Format wie bei der MagNA Pure 96 (die 24 Proben liegen in 8er-Streifen, Positionen A1–H3, und landen genau dort auf der Proben-Platte). Der Datumsbereich-Export „MP24SampleResults…csv" mit mehreren Läufen wird (noch) nicht unterstützt – bitte die einzelne Lauf-XML nehmen. Platzhalter „n/a" in leeren Feldern werden nicht mehr in „Quellplatte-ID"/Prep-Notes übernommen.
 
