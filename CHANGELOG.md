@@ -2,6 +2,9 @@
 
 Neueste Version oben. Aktuelle Releases & Download: https://welldone-prompter.github.io/WellDone/
 
+**Version 10.8** (Juli 2026)
+- **Export für den LightCycler 96 (neu):** Über **📤 Setup LC** lässt sich die Plattenbelegung jetzt auch für den **LightCycler 96** speichern (Dateityp im Speichern-Dialog wählen). WellDone! schreibt eine **MagNA-Pure-96-Sample-Data-Datei** (tab-getrennt) mit Position, Probenname und dem **Assay** (Spalte „Sample Note"). In der LC96-Software über **Sample Editor → Table View → Rechtsklick → „Import MP96 Sample List"** einlesen – **ohne Dye/Detektionsformat** (das kennt der LC96 an dieser Stelle nicht; Probentyp, Farbe und Farbstoffe/Gene stellst du wie gewohnt am Gerät ein). Es werden **alle 96 Positionen** geschrieben, damit leere Wells leer bleiben statt „Sample 2/3/…".
+
 **Version 10.7** (Juli 2026)
 - **Export für den LightCycler 480 (neu):** Über **📤 Setup LC** lässt sich die Plattenbelegung jetzt auch für den **LightCycler 480** speichern (Dateityp im Speichern-Dialog wählen; Ordner + zuletzt gewählter Dateityp werden gemerkt). WellDone! schreibt die **Sample-Editor-Importdatei** (tab-getrennt) mit Position, Probenname, **Assay** (Spalte „Sample Note"), Probentyp (Unknown/Standard/Positiv-/Negativ-Kontrolle) und der **Assay-Farbe** – so gruppiert der LC480 die Platte nach Assay. In der LC480-Software über **Sample Editor → Import** einlesen. Der LC480 kennt keine LCAPs; Detektionsformat/Programm und die Kanäle wählst du wie gewohnt am Gerät.
 
