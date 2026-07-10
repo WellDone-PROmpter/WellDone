@@ -2,6 +2,10 @@
 
 Neueste Version oben. Aktuelle Releases & Download: https://welldone-prompter.github.io/WellDone/
 
+**Version 10.9** (Juli 2026)
+- **Kontrollen mit LCAP-Namen (behebt die Kontroll-Erkennung am LightCycler PRO):** Im Assay lässt sich jetzt je Kontrolle der **Name aus dem LCAP** hinterlegen (z. B. Positivkontrolle „PosK", Negativkontrolle „negK"). WellDone! schreibt diesen Namen als **Sample-ID** in den LC-PRO-Export – so erkennt der LightCycler PRO die Kontrolle und übernimmt sie korrekt. (Bisher stand dort der Rollen-Code „PTC"/„NTC"; hieß die Kontrolle im LCAP anders, wurde sie vom PRO **nicht** übernommen.)
+- **Assay aus einem LightCycler-PRO-Lauf einlesen (neu):** Im Assay-Dialog liest **📥 Aus LightCycler-PRO-Lauf einlesen…** den **Customer-Export** (ZIP/XML) eines echten Laufs und füllt automatisch **Assay-Name, PCR-Profil und die Kontrollen** (Typ + LCAP-Name, z. B. PTC „PosK" / NTC „negK") – so passt das Assay-Menü exakt zum programmierten LCAP, ganz ohne Abtippen. Der Lauf muss zum **Plattenformat** (96/384) des Assays passen; ein Lauf im falschen Format wird abgelehnt (LCAPs sind 96/384-spezifisch).
+
 **Version 10.8** (Juli 2026)
 - **Export für den LightCycler 96 (neu):** Über **📤 Setup LC** lässt sich die Plattenbelegung jetzt auch für den **LightCycler 96** speichern (Dateityp im Speichern-Dialog wählen). WellDone! schreibt eine **MagNA-Pure-96-Sample-Data-Datei** (tab-getrennt) mit Position, Probenname und dem **Assay** (Spalte „Sample Note"). In der LC96-Software über **Sample Editor → Table View → Rechtsklick → „Import MP96 Sample List"** einlesen – **ohne Dye/Detektionsformat** (das kennt der LC96 an dieser Stelle nicht; Probentyp, Farbe und Farbstoffe/Gene stellst du wie gewohnt am Gerät ein). Es werden **alle 96 Positionen** geschrieben, damit leere Wells leer bleiben statt „Sample 2/3/…".
 
