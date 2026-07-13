@@ -2,6 +2,11 @@
 
 Neueste Version oben. Aktuelle Releases & Download: https://welldone-prompter.github.io/WellDone/
 
+**Version 10.10** (Juli 2026)
+- **Mehrere Kontrollen je Typ (neu):** Ein Assay kann jetzt **mehrere Kontrollen desselben Typs** führen – der LightCycler PRO erlaubt je Kontrolltyp **eine pro Target**. So lassen sich z. B. zwei Positivkontrollen `PTC-Mix I` und `PTC Mix II` anlegen, die verschiedene Targets abdecken. Im Assay-Dialog gibt es dafür einen **Kontroll-Editor** (Liste mit *Typ · Name · [Well]*, Knopf „+ Kontrolle"); jede Kontrolle belegt ein eigenes Well und erscheint im Export mit ihrem LCAP-Namen. Bestehende Assays werden **automatisch übernommen**.
+- **Ein PCR-Profil je Platte:** Assays mit **unterschiedlichem PCR-Profil** lassen sich nicht mehr gemeinsam auf eine Platte belegen (der PRO erlaubt nur **ein** Profil je Platte – sonst scheitert schon der Import) – WellDone! meldet das direkt beim **„Plattenbelegung ausführen"**.
+- **Feinschliff:** Der „Entwurf/Version"-Hinweis oben im Handbuch ist entfernt; die Werkzeugspalten sind **kompakter** (mehr Platz für die Assay-Übersicht unter „Feld-Detail").
+
 **Version 10.9** (Juli 2026)
 - **Kontrollen mit LCAP-Namen (behebt die Kontroll-Erkennung am LightCycler PRO):** Im Assay lässt sich jetzt je Kontrolle der **Name aus dem LCAP** hinterlegen (z. B. Positivkontrolle „PosK", Negativkontrolle „negK"). WellDone! schreibt diesen Namen als **Sample-ID** in den LC-PRO-Export – so erkennt der LightCycler PRO die Kontrolle und übernimmt sie korrekt. (Bisher stand dort der Rollen-Code „PTC"/„NTC"; hieß die Kontrolle im LCAP anders, wurde sie vom PRO **nicht** übernommen.)
 - **Assay aus einem LightCycler-PRO-Lauf einlesen (neu):** Im Assay-Dialog liest **📥 Aus LightCycler-PRO-Lauf einlesen…** den **Customer-Export** (ZIP/XML) eines echten Laufs und füllt automatisch **Assay-Name, PCR-Profil und die Kontrollen** (Typ + LCAP-Name, z. B. PTC „PosK" / NTC „negK") – so passt das Assay-Menü exakt zum programmierten LCAP, ganz ohne Abtippen. Der Lauf muss zum **Plattenformat** (96/384) des Assays passen; ein Lauf im falschen Format wird abgelehnt (LCAPs sind 96/384-spezifisch).
