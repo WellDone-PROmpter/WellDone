@@ -48,6 +48,9 @@
   .card{ background:#fff; border:1px solid var(--line); border-radius:10px; padding:18px 20px; }
   .card h3{ margin:0 0 8px; font-size:17px; color:var(--blue); }
   .card ol{ margin:8px 0 0; padding-left:20px; }
+  .card ol.steps{ margin:8px 0 6px; padding-left:22px; }
+  .card ol.steps li{ margin:4px 0; }
+  .card .small{ font-size:12.5px; color:var(--muted); margin:6px 0 0; }
   .card a{ color:#1565C0; }
   .warn{ background:var(--warn-bg); border:1px solid var(--warn-br); color:var(--warn-ink); border-radius:8px; padding:16px 18px; }
   .share{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
@@ -184,6 +187,35 @@
 
 <section>
   <div class="wrap">
+    <div class="card">
+      <h3 class="l-de">🛡️ Startet die .exe gar nicht? (IT-Sperre / Virenscanner)</h3>
+      <h3 class="l-en">🛡️ The .exe won't start at all? (IT policy / antivirus)</h3>
+      <div class="l-de">
+        <p>Auf manchen abgesicherten Firmenrechnern lässt die IT oder der Virenscanner die normale Einzeldatei nicht starten (sie entpackt sich beim Start in einen gesperrten Temp-Ordner). Dann diese <strong>Ordner-Variante (ZIP)</strong> nehmen – <strong>gleiches Programm</strong>, keine Installation, keine Administratorrechte:</p>
+        <ol class="steps">
+          <li><a class="dlzip" href="https://github.com/WellDone-PROmpter/WellDone/releases/latest">Ordner-Variante (ZIP) herunterladen</a>.</li>
+          <li>ZIP <strong>entpacken</strong> (Rechtsklick → „Alle extrahieren…"). Der Ordner <strong>WellDone_10.10</strong> muss zusammenbleiben.</li>
+          <li>Den Ordner öffnen und <strong>WellDone_10.10.exe</strong> per Doppelklick starten (liegt neben dem Unterordner <em>_internal</em>).</li>
+          <li>Falls „Der Computer wurde durch Windows geschützt": auf <strong>„Weitere Informationen"</strong> → <strong>„Trotzdem ausführen"</strong> (nur beim ersten Start).</li>
+        </ol>
+        <p class="small">Eine ausführliche <strong>START-ANLEITUNG.txt</strong> (Deutsch &amp; Englisch) liegt direkt in der ZIP.</p>
+      </div>
+      <div class="l-en">
+        <p>On some locked-down company PCs, IT policy or the antivirus won't let the single-file version start (it unpacks into a blocked temp folder at launch). Then use this <strong>folder edition (ZIP)</strong> – <strong>same program</strong>, no installation, no administrator rights:</p>
+        <ol class="steps">
+          <li><a class="dlzip" href="https://github.com/WellDone-PROmpter/WellDone/releases/latest">Download the folder edition (ZIP)</a>.</li>
+          <li><strong>Extract</strong> the ZIP (right-click → “Extract All…”). Keep the <strong>WellDone_10.10</strong> folder together.</li>
+          <li>Open the folder and double-click <strong>WellDone_10.10.exe</strong> (next to the <em>_internal</em> subfolder).</li>
+          <li>If “Windows protected your PC” appears: click <strong>“More info”</strong> → <strong>“Run anyway”</strong> (first start only).</li>
+        </ol>
+        <p class="small">A detailed <strong>START-ANLEITUNG.txt</strong> (German &amp; English) is included in the ZIP.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <h2 class="l-de">Weitergeben</h2>
     <h2 class="l-en">Pass it on</h2>
     <p class="l-de"><strong>Weitergabe ist explizit erwünscht!</strong></p>
@@ -282,13 +314,20 @@ function copyUrl(btn){
 // — bewusst applyLang, damit ein blosser Besuch die Browsersprach-Erkennung nicht einfriert.
 applyLang(curLang());
 
-// Download-Knopf auf die direkte, versionierte .exe der neuesten Release heben
-// (Fallback bleibt die Releases-Seite, falls die GitHub-API mal nicht antwortet).
+// Download-Knopf auf die direkte, versionierte .exe der neuesten Release heben und
+// die „Ordner-Variante"-Links auf die passende .zip. (Fallback bleibt jeweils die
+// Releases-Seite, falls die GitHub-API mal nicht antwortet.)
 fetch("https://api.github.com/repos/WellDone-PROmpter/WellDone/releases/latest")
   .then(function(r){ return r.json(); })
   .then(function(d){
-    var a = (d.assets || []).find(function(x){ return x.name && x.name.toLowerCase().endsWith(".exe"); });
-    if(a && a.browser_download_url){ document.getElementById("dlbtn").href = a.browser_download_url; }
+    var assets = d.assets || [];
+    var exe = assets.find(function(x){ return x.name && x.name.toLowerCase().endsWith(".exe"); });
+    if(exe && exe.browser_download_url){ document.getElementById("dlbtn").href = exe.browser_download_url; }
+    var zip = assets.find(function(x){ return x.name && x.name.toLowerCase().endsWith(".zip"); });
+    if(zip && zip.browser_download_url){
+      var links = document.querySelectorAll(".dlzip");
+      for(var i = 0; i < links.length; i++){ links[i].href = zip.browser_download_url; }
+    }
   }).catch(function(){});
 </script>
 
