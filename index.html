@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WellDone! — Download</title>
-<meta id="metadesc" name="description" content="WellDone! — kostenloses, offline laufendes Windows-Werkzeug für die Plattenbelegung am Roche LightCycler PRO.">
+<meta id="metadesc" name="description" content="WellDone! — kostenloses, offline laufendes Windows-Werkzeug für Plattenbelegung und Pipettierschema, kompatibel mit dem LightCycler® PRO, 480 und 96.">
 <link rel="icon" type="image/png" href="welldone.png">
 <style>
   :root{ --blue:#16527E; --accent:#27AE60; --ink:#243038; --muted:#6b7785; --line:#e3e8ee; --warn-bg:#FFF6E5; --warn-br:#E0B870; --warn-ink:#7A4F01; }
@@ -85,8 +85,8 @@
   <div class="wrap">
     <img class="logo" src="welldone.png" alt="WellDone! Logo">
     <h1>WellDone!</h1>
-    <p class="tagline l-de">Plattenbelegung für den Roche LightCycler PRO</p>
-    <p class="tagline l-en">Plate setup for the Roche LightCycler PRO</p>
+    <p class="tagline l-de">Plattenbelegung &amp; Pipettierschema – kompatibel mit LightCycler® PRO, 480 und 96</p>
+    <p class="tagline l-en">Plate layout &amp; pipetting scheme – compatible with LightCycler® PRO, 480 and 96</p>
     <p class="sub l-de">Ein kostenloses, vollständig <strong>offline</strong> laufendes Windows-Werkzeug fürs PCR-Setup.</p>
     <p class="sub l-en">A free Windows tool for PCR setup — runs fully <strong>offline</strong>.</p>
     <a id="dlbtn" class="btn" href="https://github.com/WellDone-PROmpter/WellDone/releases/latest">
@@ -133,10 +133,10 @@
 <section>
   <div class="wrap">
     <div class="sister l-de">
-      🧬 <strong>Schwester-App: <a href="https://welldone-prompter.github.io/PROmpter/">PROmpter</a></strong> — bereitet <em>nach</em> dem Lauf die LightCycler-PRO-Ergebnisse automatisch zu PDF-Bericht &amp; Excel auf. <em>WellDone = Vorbereitung, PROmpter = Auswertung.</em>
+      🧬 <strong>Schwester-App: <a href="https://welldone-prompter.github.io/PROmpter/">PROmpter</a></strong> — bereitet <em>nach</em> dem Lauf die LightCycler-PRO-Ergebnisse automatisch zu PDF-Bericht &amp; Excel auf. <em>WellDone = Vorbereitung, PROmpter = Ergebnis-Übersicht.</em>
     </div>
     <div class="sister l-en">
-      🧬 <strong>Sister app: <a href="https://welldone-prompter.github.io/PROmpter/">PROmpter</a></strong> — turns the LightCycler PRO results into a PDF report &amp; Excel automatically <em>after</em> the run. <em>WellDone = preparation, PROmpter = evaluation.</em>
+      🧬 <strong>Sister app: <a href="https://welldone-prompter.github.io/PROmpter/">PROmpter</a></strong> — turns the LightCycler PRO results into a PDF report &amp; Excel automatically <em>after</em> the run. <em>WellDone = preparation, PROmpter = results overview.</em>
     </div>
   </div>
 </section>
@@ -205,14 +205,18 @@
 <section>
   <div class="wrap">
     <div class="warn l-de">
-      <strong>⚠️ Wichtiger Hinweis:</strong> WellDone! ist ein <strong>Hilfswerkzeug, kein Medizinprodukt und nicht validiert</strong>.
-      Plattenbelegung, Kontrollen und MasterMix-Mengen <strong>vor jedem Lauf prüfen</strong>. Es wird keine Haftung für Schäden oder
-      fehlerhafte Ergebnisse übernommen.
+      <strong>⚠️ Wichtiger Hinweis:</strong> WellDone! ist ein kostenloses, nicht validiertes Hilfswerkzeug zur Vorbereitung von qPCR-Läufen
+      (Probenerfassung, Plattenbelegung, MasterMix-Berechnung, Pipettierschema, Import-Dateien für die Geräte). Es wertet keine Messergebnisse aus.
+      WellDone! wird nicht als Medizinprodukt oder In-vitro-Diagnostikum in Verkehr gebracht, trägt keine CE-Kennzeichnung und wurde regulatorisch
+      nicht formal geprüft. Vor dem Routineeinsatz ist es im Qualitätsmanagement des Labors zu prüfen und freizugeben; Plattenbelegung, Kontrollen
+      und MasterMix-Mengen sind vor jedem Lauf zu kontrollieren. Die Haftung richtet sich nach den gesetzlichen Vorschriften.
     </div>
     <div class="warn l-en">
-      <strong>⚠️ Important note:</strong> WellDone! is a <strong>helper tool — not a medical device and not validated</strong>.
-      Check the plate setup, the controls and the MasterMix volumes <strong>before every run</strong>. No liability is accepted for
-      damage or incorrect results.
+      <strong>⚠️ Important note:</strong> WellDone! is a free, non-validated helper tool for preparing qPCR runs
+      (sample registration, plate layout, MasterMix calculation, pipetting scheme, import files for the instruments). It does not evaluate any measurement results.
+      WellDone! is not placed on the market as a medical device or in vitro diagnostic device, carries no CE marking and has not undergone a formal
+      regulatory assessment. Before routine use, the laboratory must check and release it within its quality management; check the plate layout,
+      the controls and the MasterMix volumes before every run. Liability is governed by the statutory provisions.
     </div>
   </div>
 </section>
@@ -231,6 +235,8 @@
       WellDone! uses open-source libraries (PySide6/Qt — GNU LGPL v3; ReportLab — BSD).<br>
       “Roche”, “LightCycler” and “MagNA Pure” are trademarks of their respective owners. WellDone! is an <strong>independent, private project</strong>,
       not reviewed or endorsed by Roche.</p>
+    <p class="l-de"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+    <p class="l-en"><a href="impressum.html">Legal notice</a> · <a href="datenschutz.html">Privacy</a></p>
   </div>
 </footer>
 
@@ -238,9 +244,9 @@
 var PAGE_URL = "https://welldone-prompter.github.io/WellDone/";
 var META = {
   de: { title:"WellDone! — Download",
-        desc:"WellDone! — kostenloses, offline laufendes Windows-Werkzeug für die Plattenbelegung am Roche LightCycler PRO." },
+        desc:"WellDone! — kostenloses, offline laufendes Windows-Werkzeug für Plattenbelegung und Pipettierschema, kompatibel mit dem LightCycler® PRO, 480 und 96." },
   en: { title:"WellDone! — Download",
-        desc:"WellDone! — free, fully offline Windows tool for plate setup on the Roche LightCycler PRO." }
+        desc:"WellDone! — free, fully offline Windows tool for plate layout and pipetting scheme, compatible with the LightCycler® PRO, 480 and 96." }
 };
 
 function curLang(){ return document.documentElement.getAttribute("data-lang") === "en" ? "en" : "de"; }

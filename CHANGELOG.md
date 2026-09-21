@@ -2,6 +2,12 @@
 
 Neueste Version oben. Aktuelle Releases & Download: https://welldone-prompter.github.io/WellDone/
 
+**Version 10.11** (September 2026)
+- **Hinweise überarbeitet:** Handbuch (DE/EN), „❓"-Dialog und Download-Seite beschreiben WellDone! jetzt genauer: ein kostenloses, **nicht validiertes Hilfswerkzeug zur Vorbereitung von qPCR-Läufen**, das **keine Messergebnisse auswertet**. WellDone! wird **nicht als Medizinprodukt oder In-vitro-Diagnostikum in Verkehr gebracht** und trägt keine CE-Kennzeichnung; vor dem Routineeinsatz ist es im **Qualitätsmanagement des Labors zu prüfen und freizugeben**. Die Haftung richtet sich nach den gesetzlichen Vorschriften.
+- **„Kompatibel mit" statt „für den …":** Der Untertitel lautet jetzt „Plattenbelegung – kompatibel mit LightCycler® PRO" (im Handbuch „…, 480 und 96").
+- **Download-Seite:** **Impressum** und **Datenschutzerklärung** (DE/EN) ergänzt.
+- **Intern:** Die Reaktions-Zählung für die MasterMix-Tabelle ist jetzt eine gemeinsame Funktion für WellDone! und WellDone! Go – die Ergebnisse bleiben unverändert.
+
 **Version 10.10** (Juli 2026)
 - **Mehrere Kontrollen je Typ (neu):** Ein Assay kann jetzt **mehrere Kontrollen desselben Typs** führen – der LightCycler PRO erlaubt je Kontrolltyp **eine pro Target**. So lassen sich z. B. zwei Positivkontrollen `PTC-Mix I` und `PTC Mix II` anlegen, die verschiedene Targets abdecken. Im Assay-Dialog gibt es dafür einen **Kontroll-Editor** (Liste mit *Typ · Name · [Well]*, Knopf „+ Kontrolle"); jede Kontrolle belegt ein eigenes Well und erscheint im Export mit ihrem LCAP-Namen. Bestehende Assays werden **automatisch übernommen**.
 - **Ein PCR-Profil je Platte:** Assays mit **unterschiedlichem PCR-Profil** lassen sich nicht mehr gemeinsam auf eine Platte belegen (der PRO erlaubt nur **ein** Profil je Platte – sonst scheitert schon der Import) – WellDone! meldet das direkt beim **„Plattenbelegung ausführen"**.

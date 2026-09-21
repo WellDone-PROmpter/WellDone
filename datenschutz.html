@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — WellDone! · PROmpter</title>
+<meta id="metadesc" name="description" content="Datenschutzerklärung für WellDone!, PROmpter, WellDone! Go und PROmpter Go.">
+<link rel="icon" type="image/png" href="welldone.png">
+<style>
+  :root{ --blue:#16527E; --accent:#27AE60; --ink:#243038; --muted:#6b7785; --line:#e3e8ee; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif; color:var(--ink); background:#f6f8fb; line-height:1.55; }
+  .wrap{ max-width:820px; margin:0 auto; padding:0 20px; }
+  header{ position:relative; background:linear-gradient(160deg,#1d6fb0,#16527E); color:#fff; padding:26px 0 22px; }
+  header .brand{ margin:0; font-size:24px; font-weight:700; letter-spacing:.3px; }
+  header nav{ margin-top:6px; font-size:14px; }
+  header nav a{ color:#dcefff; margin-right:16px; }
+  /* Sprachumschalter / language switch (wie auf den Download-Seiten) */
+  /* Dunkler (nicht heller) Schleier: hält den Kontrast der weissen DE/EN-Schrift über
+     dem blauen Verlauf über der WCAG-AA-Schwelle von 4,5:1. */
+  .langsw{ position:absolute; top:14px; right:16px; display:inline-flex; border:1px solid rgba(255,255,255,.55);
+           border-radius:8px; overflow:hidden; background:rgba(0,0,0,.20); }
+  .langsw button{ appearance:none; background:transparent; border:0; color:#fff; font:inherit; font-size:13px;
+                  font-weight:700; letter-spacing:.5px; padding:6px 13px; cursor:pointer; }
+  .langsw button + button{ border-left:1px solid rgba(255,255,255,.35); }
+  .langsw button:hover{ background:rgba(255,255,255,.14); }
+  .langsw button[aria-pressed="true"]{ background:#fff; color:var(--blue); }
+  html[data-lang="de"] .l-en{ display:none !important; }
+  html[data-lang="en"] .l-de{ display:none !important; }
+  main{ padding:30px 0 10px; }
+  h1{ color:var(--blue); font-size:30px; margin:0 0 4px; }
+  .subhead{ color:var(--muted); margin:0 0 22px; }
+  h2{ color:var(--blue); font-size:19px; margin:28px 0 8px; }
+  address{ font-style:normal; background:#fff; border:1px solid var(--line); border-radius:10px; padding:16px 20px; }
+  main a{ color:#1565C0; }
+  code{ background:#eef2f7; border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:13px; }
+  main ul{ padding-left:22px; }
+  main li{ margin:4px 0; }
+  .stand{ color:var(--muted); margin-top:30px; }
+  footer{ padding:24px 0 50px; color:var(--muted); font-size:14px; text-align:center; border-top:1px solid var(--line); margin-top:30px; }
+  footer a{ color:#1565C0; }
+  @media(max-width:680px){ header .brand{ margin-top:30px; } }
+</style>
+<script>
+// Sprache VOR dem Rendern festlegen: gemerkte Wahl, sonst Browsersprache (de… = Deutsch, sonst Englisch).
+// Muss im <head> laufen, sonst blitzt kurz die falsche Sprache auf.
+(function(){
+  var l = null;
+  try{ l = localStorage.getItem("lang"); }catch(e){}
+  if(l !== "de" && l !== "en"){
+    var n = (navigator.language || "de").toLowerCase();
+    l = (n === "de" || n.indexOf("de-") === 0) ? "de" : "en";
+  }
+  document.documentElement.setAttribute("data-lang", l);
+  document.documentElement.setAttribute("lang", l);
+})();
+</script>
+</head>
+<body>
+
+<header>
+  <div class="langsw" role="group" aria-label="Sprache / Language">
+    <button type="button" id="btn-de" onclick="setLang('de')" aria-pressed="true" lang="de">DE</button>
+    <button type="button" id="btn-en" onclick="setLang('en')" aria-pressed="false" lang="en">EN</button>
+  </div>
+  <div class="wrap">
+    <p class="brand">WellDone! · PROmpter</p>
+    <nav class="l-de">
+      <a href="https://welldone-prompter.github.io/WellDone/">← zurück zu WellDone!</a>
+      <a href="https://welldone-prompter.github.io/PROmpter/">← zurück zu PROmpter</a>
+    </nav>
+    <nav class="l-en">
+      <a href="https://welldone-prompter.github.io/WellDone/">← back to WellDone!</a>
+      <a href="https://welldone-prompter.github.io/PROmpter/">← back to PROmpter</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="l-de">
+      <h1>Datenschutzerklärung</h1>
+      <p class="subhead">für die Seiten und Programme WellDone!, PROmpter, WellDone! Go und PROmpter Go</p>
+
+      <h2>1. Verantwortlicher</h2>
+      <address>
+        Dr. Christoph Horlemann<br>
+        St.-Ägidius-Str. 10<br>
+        97359 Schwarzach am Main<br>
+        Deutschland<br>
+        E-Mail: <a href="mailto:well.done.pcr.setup@gmail.com">well.done.pcr.setup@gmail.com</a>
+      </address>
+
+      <h2>2. Hosting über GitHub Pages</h2>
+      <p>Alle vier Seiten (<a href="https://welldone-prompter.github.io/WellDone/">WellDone!</a>, <a href="https://welldone-prompter.github.io/PROmpter/">PROmpter</a>,
+        <a href="https://welldone-prompter.github.io/WellDone-Go/">WellDone! Go</a>, <a href="https://welldone-prompter.github.io/PROmpter-Go/">PROmpter Go</a>) werden über
+        <strong>GitHub Pages</strong> bereitgestellt. Anbieter ist die GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
+      <p>Beim Aufruf einer Seite verarbeitet GitHub die technisch notwendigen Daten, um die Seite auszuliefern, darunter Ihre <strong>IP-Adresse</strong>.
+        Laut GitHub wird die IP-Adresse der Besucher von GitHub-Pages-Seiten zu Sicherheitszwecken protokolliert und gespeichert.
+        Ich selbst erhalte keine Zugriffsprotokolle und werte keine aus.</p>
+      <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; das berechtigte Interesse liegt in der sicheren und zuverlässigen Auslieferung der Seiten.</p>
+      <p>Dabei können Daten in die USA übermittelt werden. GitHub ist nach dem EU-U.S. Data Privacy Framework zertifiziert
+        (<a href="https://www.dataprivacyframework.gov/participant/6174">Eintrag auf dataprivacyframework.gov</a>); die Übermittlung stützt sich auf den zugehörigen Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO).
+        Einzelheiten: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement">Datenschutzerklärung von GitHub</a>.</p>
+
+      <h2>3. Download-Seiten WellDone! und PROmpter</h2>
+      <p>Beim Aufruf der Download-Seite von WellDone! bzw. PROmpter fragt Ihr Browser bei <code>api.github.com</code> (GitHub) die neueste veröffentlichte Version ab,
+        damit der Download-Knopf direkt auf die aktuelle <code>.exe</code> zeigt. Dabei wird Ihre IP-Adresse an GitHub übermittelt.
+        Die Programmdateien selbst werden über GitHub Releases (ebenfalls GitHub) heruntergeladen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO
+        (Bereitstellung des aktuellen Downloads).</p>
+      <p>Darüber hinaus binden die Seiten <strong>keine Inhalte Dritter</strong> ein: keine externen Schriftarten, keine Analyse- oder Statistikdienste, keine Cookies, kein Tracking.</p>
+
+      <h2>4. Browser-Apps WellDone! Go und PROmpter Go</h2>
+      <p>Alle Berechnungen laufen <strong>lokal in Ihrem Browser</strong> (WebAssembly/Pyodide). Eingegebene Proben-IDs, Plattenbelegungen und hochgeladene
+        Export-Dateien werden <strong>an niemanden übermittelt</strong> – auch nicht an mich. Erzeugte PDF-, CSV- und Excel-Dateien entstehen ebenfalls lokal.</p>
+      <p>Sämtliche Programmdateien, einschließlich Pyodide und der benötigten Python-Pakete, werden von GitHub Pages geladen (siehe Abschnitt 2).</p>
+
+      <h2>5. Speicherung im Browser (localStorage), keine Cookies</h2>
+      <p>Die Seiten setzen <strong>keine Cookies</strong>. Einige Einstellungen werden im lokalen Speicher Ihres Browsers (<code>localStorage</code>) abgelegt.
+        Diese Daten verlassen Ihren Browser nicht und werden nicht an mich oder Dritte übertragen:</p>
+      <ul>
+        <li><code>lang</code> – Ihre Sprachwahl (DE/EN) auf den Download-Seiten und diesen Rechtsseiten; wird nur gespeichert, wenn Sie auf DE oder EN klicken.</li>
+        <li><code>welldone.web.lang</code> – Ihre Sprachwahl in WellDone! Go (nur nach Klick auf DE/EN).</li>
+        <li><code>welldone.web.assays.v1</code> – Ihre Assay-Bibliothek in WellDone! Go (Anzeigename, LCAP-Name, PCR-Profil, Farbe, Kontrollen, Mengen je Reaktion);
+          wird beim ersten Aufruf mit den Beispiel-Assays angelegt und bei jeder Änderung aktualisiert. Proben-IDs werden hier nicht gespeichert.</li>
+        <li><code>prompter.go.lang</code> – Ihre Sprachwahl in PROmpter Go (nur nach Klick auf DE/EN).</li>
+      </ul>
+      <p>Die Speicherung ist unbedingt erforderlich, um die von Ihnen ausdrücklich gewünschten Funktionen bereitzustellen (§ 25 Abs. 2 Nr. 2 TDDDG).
+        Sie können die Daten jederzeit über die Einstellungen Ihres Browsers löschen (Website-Daten für <code>welldone-prompter.github.io</code>).</p>
+
+      <h2>6. Desktop-Programme WellDone! und PROmpter</h2>
+      <p>Die Windows-Programme arbeiten <strong>offline</strong>. Der einzige Netzwerkzugriff ist eine Update-Prüfung, die <strong>nur beim Öffnen des Dialogs „Über“</strong> stattfindet:
+        Das Programm ruft dann von <code>raw.githubusercontent.com</code> (GitHub) eine kleine Versionsdatei ab. Dabei wird Ihre IP-Adresse an GitHub übermittelt,
+        sonst keine Daten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (Hinweis auf neue Versionen).</p>
+
+      <h2>7. Kontakt per E-Mail und Online-Formular</h2>
+      <p>Wenn Sie mir an <a href="mailto:well.done.pcr.setup@gmail.com">well.done.pcr.setup@gmail.com</a> schreiben, verarbeite ich Ihre E-Mail-Adresse und den Inhalt Ihrer Nachricht,
+        um Ihre Anfrage, Ihr Feedback oder Ihren Fehlerbericht zu bearbeiten. Das Postfach ist ein Gmail-Konto des Projekts; Anbieter ist Google
+        (für Nutzer im EWR: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland).</p>
+      <p>Das <strong>Online-Formular</strong> ist ein Google-Formular, auf das die Seiten nur <strong>verlinken</strong>. Google verarbeitet Daten erst, wenn Sie das Formular öffnen.
+        Die dort eingegebenen Angaben verwende ich ausschließlich zur Bearbeitung von Feedback und Fehlerberichten.
+        Einzelheiten: <a href="https://policies.google.com/privacy?hl=de">Datenschutzerklärung von Google</a>.</p>
+      <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (Beantwortung Ihrer Anfrage). Ich lösche Ihre Nachricht, sobald die Anfrage erledigt ist,
+        sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+
+      <h2>8. Ihre Rechte</h2>
+      <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18),
+        Datenübertragbarkeit (Art. 20) und Widerspruch gegen die Verarbeitung (Art. 21 DSGVO). Wenden Sie sich dazu an die oben genannte E-Mail-Adresse.</p>
+      <p>Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren (Art. 77 DSGVO), z. B. bei der für mich zuständigen Behörde:
+        Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach, <a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>.</p>
+
+      <p class="stand">Stand: September 2026</p>
+    </section>
+    <section class="l-en">
+      <h1>Privacy policy</h1>
+      <p class="subhead">for the pages and programs WellDone!, PROmpter, WellDone! Go and PROmpter Go</p>
+
+      <h2>1. Controller</h2>
+      <address>
+        Dr. Christoph Horlemann<br>
+        St.-Ägidius-Str. 10<br>
+        97359 Schwarzach am Main<br>
+        Germany<br>
+        E-mail: <a href="mailto:well.done.pcr.setup@gmail.com">well.done.pcr.setup@gmail.com</a>
+      </address>
+
+      <h2>2. Hosting via GitHub Pages</h2>
+      <p>All four sites (<a href="https://welldone-prompter.github.io/WellDone/">WellDone!</a>, <a href="https://welldone-prompter.github.io/PROmpter/">PROmpter</a>,
+        <a href="https://welldone-prompter.github.io/WellDone-Go/">WellDone! Go</a>, <a href="https://welldone-prompter.github.io/PROmpter-Go/">PROmpter Go</a>) are served via
+        <strong>GitHub Pages</strong>. The provider is GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
+      <p>When you open a page, GitHub processes the technically necessary data to deliver it, including your <strong>IP address</strong>.
+        According to GitHub, the IP address of visitors to GitHub Pages sites is logged and stored for security purposes.
+        I do not receive any access logs myself and do not analyse any.</p>
+      <p>The legal basis is Art. 6(1)(f) GDPR; the legitimate interest is the secure and reliable delivery of the pages.</p>
+      <p>Data may be transferred to the USA in the process. GitHub is certified under the EU-U.S. Data Privacy Framework
+        (<a href="https://www.dataprivacyframework.gov/participant/6174">entry on dataprivacyframework.gov</a>); the transfer is based on the corresponding adequacy decision of the European Commission (Art. 45 GDPR).
+        Details: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</p>
+
+      <h2>3. Download pages WellDone! and PROmpter</h2>
+      <p>When you open the WellDone! or PROmpter download page, your browser asks <code>api.github.com</code> (GitHub) for the latest published version
+        so that the download button points directly to the current <code>.exe</code>. Your IP address is transmitted to GitHub in the process.
+        The program files themselves are downloaded from GitHub Releases (also GitHub). The legal basis is Art. 6(1)(f) GDPR
+        (providing the current download).</p>
+      <p>Apart from that, the pages embed <strong>no third-party content</strong>: no external fonts, no analytics or statistics services, no cookies, no tracking.</p>
+
+      <h2>4. Browser apps WellDone! Go and PROmpter Go</h2>
+      <p>All calculations run <strong>locally in your browser</strong> (WebAssembly/Pyodide). Sample IDs you enter, plate layouts and uploaded
+        export files are <strong>not transmitted to anyone</strong> – not to me either. The PDF, CSV and Excel files are also created locally.</p>
+      <p>All program files, including Pyodide and the required Python packages, are loaded from GitHub Pages (see section 2).</p>
+
+      <h2>5. Storage in the browser (localStorage), no cookies</h2>
+      <p>The pages set <strong>no cookies</strong>. Some settings are kept in your browser's local storage (<code>localStorage</code>).
+        This data does not leave your browser and is not transmitted to me or to third parties:</p>
+      <ul>
+        <li><code>lang</code> – your language choice (DE/EN) on the download pages and these legal pages; stored only when you click DE or EN.</li>
+        <li><code>welldone.web.lang</code> – your language choice in WellDone! Go (only after clicking DE/EN).</li>
+        <li><code>welldone.web.assays.v1</code> – your assay library in WellDone! Go (display name, LCAP name, PCR profile, colour, controls, volumes per reaction);
+          created with the example assays on first use and updated with every change. Sample IDs are not stored here.</li>
+        <li><code>prompter.go.lang</code> – your language choice in PROmpter Go (only after clicking DE/EN).</li>
+      </ul>
+      <p>This storage is strictly necessary to provide the functions you have explicitly requested (Section 25(2) no. 2 TDDDG).
+        You can delete the data at any time in your browser settings (site data for <code>welldone-prompter.github.io</code>).</p>
+
+      <h2>6. Desktop programs WellDone! and PROmpter</h2>
+      <p>The Windows programs work <strong>offline</strong>. The only network access is an update check that runs <strong>only when you open the “About” dialog</strong>:
+        the program then retrieves a small version file from <code>raw.githubusercontent.com</code> (GitHub). Your IP address is transmitted to GitHub in the process,
+        no other data. The legal basis is Art. 6(1)(f) GDPR (notice of new versions).</p>
+
+      <h2>7. Contact by e-mail and online form</h2>
+      <p>If you write to <a href="mailto:well.done.pcr.setup@gmail.com">well.done.pcr.setup@gmail.com</a>, I process your e-mail address and the content of your message
+        in order to handle your enquiry, feedback or bug report. The mailbox is a Gmail account of the project; the provider is Google
+        (for users in the EEA: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland).</p>
+      <p>The <strong>online form</strong> is a Google Form that the pages only <strong>link to</strong>. Google processes data only once you open the form.
+        I use the information entered there solely to handle feedback and bug reports.
+        Details: <a href="https://policies.google.com/privacy?hl=en">Google's privacy policy</a>.</p>
+      <p>The legal basis is Art. 6(1)(f) GDPR (answering your enquiry). I delete your message once the enquiry has been dealt with,
+        unless statutory retention obligations apply.</p>
+
+      <h2>8. Your rights</h2>
+      <p>You have the right of access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18),
+        data portability (Art. 20) and to object to processing (Art. 21 GDPR). To exercise them, please use the e-mail address above.</p>
+      <p>You also have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR), e.g. the authority competent for me:
+        Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach, Germany, <a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>.</p>
+
+      <p class="stand">Last updated: September 2026</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="l-de"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+    <p class="l-en"><a href="impressum.html">Legal notice</a> · <a href="datenschutz.html">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+var META = {
+  de: { title:"Datenschutz — WellDone! · PROmpter",
+        desc:"Datenschutzerklärung für WellDone!, PROmpter, WellDone! Go und PROmpter Go." },
+  en: { title:"Privacy — WellDone! · PROmpter",
+        desc:"Privacy policy for WellDone!, PROmpter, WellDone! Go and PROmpter Go." }
+};
+
+// applyLang = nur anzeigen. setLang = anzeigen UND merken (wie auf den Download-Seiten).
+function applyLang(l){
+  document.documentElement.setAttribute("data-lang", l);
+  document.documentElement.setAttribute("lang", l);
+  document.getElementById("btn-de").setAttribute("aria-pressed", String(l === "de"));
+  document.getElementById("btn-en").setAttribute("aria-pressed", String(l === "en"));
+  document.title = META[l].title;
+  var m = document.getElementById("metadesc");
+  if(m){ m.setAttribute("content", META[l].desc); }
+}
+
+// Nur der echte Klick auf DE/EN merkt sich die Sprache.
+function setLang(l){
+  if(l !== "de" && l !== "en"){ l = "de"; }
+  try{ localStorage.setItem("lang", l); }catch(e){}
+  applyLang(l);
+}
+
+applyLang(document.documentElement.getAttribute("data-lang") === "en" ? "en" : "de");
+</script>
+
+</body>
+</html>

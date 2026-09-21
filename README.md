@@ -1,6 +1,6 @@
 # WellDone!
 
-**Plattenbelegung für den Roche LightCycler PRO** — ein kostenloses, vollständig **offline** laufendes Windows-Werkzeug fürs PCR-Setup.
+**Plattenbelegung – kompatibel mit LightCycler® PRO** — ein kostenloses, vollständig **offline** laufendes Windows-Werkzeug fürs PCR-Setup.
 
 ## ⬇ Download
 
@@ -22,7 +22,7 @@ Erfasst Proben, belegt automatisch die PCR-Platte, erzeugt das **Pipettierschema
 
 ## ⚠️ Wichtiger Hinweis
 
-WellDone! ist ein **Hilfswerkzeug, kein Medizinprodukt und nicht validiert**. Plattenbelegung, Kontrollen und MasterMix-Mengen **vor jedem Lauf prüfen**. Es wird keine Haftung für Schäden oder fehlerhafte Ergebnisse übernommen.
+WellDone! ist ein kostenloses, **nicht validiertes Hilfswerkzeug** zur Vorbereitung von qPCR-Läufen; es wertet keine Messergebnisse aus. WellDone! wird **nicht als Medizinprodukt oder In-vitro-Diagnostikum in Verkehr gebracht**, trägt keine CE-Kennzeichnung und wurde regulatorisch nicht formal geprüft. Vor dem Routineeinsatz ist es im Qualitätsmanagement des Labors zu prüfen und freizugeben; Plattenbelegung, Kontrollen und MasterMix-Mengen sind **vor jedem Lauf zu kontrollieren**. Die Haftung richtet sich nach den gesetzlichen Vorschriften.
 
 ## Kontakt
 
@@ -34,4 +34,4 @@ Freie, private Weitergabe erwünscht; **kein Verkauf / kein kommerzieller Vertri
 
 ---
 
-*English — WellDone! is a free, fully **offline** Windows tool for PCR setup on the Roche LightCycler PRO. Download from the [download page](https://welldone-prompter.github.io/WellDone/). It records samples, fills the PCR plate automatically, creates the pipetting scheme (PDF) and the plate-setup (CSV) for the LightCycler PRO software, and can create the order for the MagNA Pure 96. **Helper tool — not a medical device, not validated; check every run.** See the [English manual](MANUAL_EN.pdf).*
+*English — WellDone! is a free, fully **offline** Windows tool for PCR setup, compatible with the LightCycler® PRO. Download from the [download page](https://welldone-prompter.github.io/WellDone/). It records samples, fills the PCR plate automatically, creates the pipetting scheme (PDF) and the plate-setup (CSV) for the LightCycler PRO software, and can create the order for the MagNA Pure 96. **Non-validated helper tool — not placed on the market as a medical device/IVD, no CE marking, no formal regulatory assessment; release it in your lab's QM before routine use and check every run. Liability is governed by the statutory provisions.** See the [English manual](MANUAL_EN.pdf).*
