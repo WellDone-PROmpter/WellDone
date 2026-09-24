@@ -1,307 +1,49 @@
 <!DOCTYPE html>
-<html lang="de" data-lang="de">
+<html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WellDone! — Download</title>
-<meta id="metadesc" name="description" content="WellDone! — kostenloses, offline laufendes Windows-Werkzeug für Plattenbelegung und Pipettierschema, kompatibel mit dem LightCycler® PRO, 480 und 96.">
-<link rel="icon" type="image/png" href="welldone.png">
+<meta name="robots" content="noindex">
+<title>WellDone!</title>
 <style>
-  :root{ --blue:#16527E; --accent:#27AE60; --ink:#243038; --muted:#6b7785; --line:#e3e8ee; --warn-bg:#FFF6E5; --warn-br:#E0B870; --warn-ink:#7A4F01; }
-  *{ box-sizing:border-box; }
-  body{ margin:0; font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif; color:var(--ink); background:#f6f8fb; line-height:1.55; }
-  .wrap{ max-width:960px; margin:0 auto; padding:0 20px; }
-  header{ position:relative; background:linear-gradient(160deg,#1d6fb0,#16527E); color:#fff; padding:46px 0 44px; text-align:center; }
-  .logo{ width:92px; height:92px; border-radius:20px; background:#fff; padding:7px; box-shadow:0 4px 14px rgba(0,0,0,.22); margin-bottom:10px; }
-  header h1{ margin:0; font-size:46px; letter-spacing:.5px; }
-  .tagline{ margin:6px 0 2px; font-size:20px; font-weight:600; opacity:.97; }
-  .sub{ margin:0 auto; max-width:620px; opacity:.9; }
-  .btn{ display:inline-block; margin:22px 0 8px; background:var(--accent); color:#fff; text-decoration:none;
-        font-size:20px; font-weight:700; padding:15px 30px; border-radius:9px; box-shadow:0 4px 14px rgba(0,0,0,.18); }
-  .btn:hover{ background:#229954; }
-  .meta{ font-size:14px; opacity:.9; margin:6px 0 0; }
-  .meta a{ color:#dcefff; }
-  /* Sprachumschalter / language switch */
-  /* Dunkler (nicht heller) Schleier: hält den Kontrast der weissen DE/EN-Schrift über
-     dem blauen Verlauf über der WCAG-AA-Schwelle von 4,5:1. */
-  .langsw{ position:absolute; top:14px; right:16px; display:inline-flex; border:1px solid rgba(255,255,255,.55);
-           border-radius:8px; overflow:hidden; background:rgba(0,0,0,.20); }
-  .langsw button{ appearance:none; background:transparent; border:0; color:#fff; font:inherit; font-size:13px;
-                  font-weight:700; letter-spacing:.5px; padding:6px 13px; cursor:pointer; }
-  .langsw button + button{ border-left:1px solid rgba(255,255,255,.35); }
-  .langsw button:hover{ background:rgba(255,255,255,.14); }
-  .langsw button[aria-pressed="true"]{ background:#fff; color:var(--blue); }
-  html[data-lang="de"] .l-en{ display:none !important; }
-  html[data-lang="en"] .l-de{ display:none !important; }
-  section{ padding:34px 0; border-bottom:1px solid var(--line); }
-  .imgbox{ text-align:center; background:#fff; }
-  .imgbox img{ max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; box-shadow:0 6px 22px rgba(20,40,70,.10); }
-  h2{ color:var(--blue); font-size:24px; margin:0 0 14px; }
-  .center{ text-align:center; }
-  .lead{ color:var(--muted); max-width:680px; margin:0 auto 18px; }
-  ul.feat{ margin:0; padding-left:0; list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px 26px; }
-  ul.feat li{ padding-left:26px; position:relative; }
-  ul.feat li::before{ content:"✓"; color:var(--accent); font-weight:800; position:absolute; left:0; }
-  .sister{ background:#eef4fa; border:1px solid #cfe0f0; border-radius:10px; padding:16px 20px; }
-  .sister a{ color:#1565C0; font-weight:700; }
-  .cards{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-  .card{ background:#fff; border:1px solid var(--line); border-radius:10px; padding:18px 20px; }
-  .card h3{ margin:0 0 8px; font-size:17px; color:var(--blue); }
-  .card ol{ margin:8px 0 0; padding-left:20px; }
-  .card a{ color:#1565C0; }
-  .warn{ background:var(--warn-bg); border:1px solid var(--warn-br); color:var(--warn-ink); border-radius:8px; padding:16px 18px; }
-  .share{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
-  .share code{ background:#eef2f7; border:1px solid var(--line); border-radius:6px; padding:9px 13px; font-size:15px; color:var(--ink); }
-  .copybtn{ font-size:15px; font-weight:600; padding:9px 16px; border-radius:7px; cursor:pointer; text-decoration:none; border:1px solid var(--blue); background:#fff; color:var(--blue); }
-  .copybtn:hover{ background:#eef4fa; }
-  .flyer{ margin-top:16px; }
-  .flyer a{ color:#1565C0; font-weight:600; }
-  footer{ padding:30px 0 50px; color:var(--muted); font-size:14px; text-align:center; }
-  footer a{ color:#1565C0; }
-  @media(max-width:680px){ ul.feat,.cards{ grid-template-columns:1fr; } header h1{ font-size:38px; } .logo{ margin-top:18px; } }
-</style>
-<script>
-// Sprache VOR dem Rendern festlegen: gemerkte Wahl, sonst Browsersprache (de… = Deutsch, sonst Englisch).
-// Muss im <head> laufen, sonst blitzt kurz die falsche Sprache auf.
-(function(){
-  var l = null;
-  try{ l = localStorage.getItem("lang"); }catch(e){}
-  if(l !== "de" && l !== "en"){
-    var n = (navigator.language || "de").toLowerCase();
-    l = (n === "de" || n.indexOf("de-") === 0) ? "de" : "en";
+  :root { color-scheme: light dark; }
+  body { margin:0; padding:2.5rem 1rem; background:#f7f8fa; color:#1d2129;
+          font:16px/1.6 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+  main { max-width:38rem; margin:0 auto; background:#fff; border:1px solid #e3e6ea;
+          border-radius:12px; padding:2rem 1.75rem; }
+  h1 { font-size:1.5rem; margin:0 0 1.25rem; }
+  h2 { font-size:1rem; text-transform:uppercase; letter-spacing:.06em;
+        color:#6b7280; margin:2rem 0 .5rem; }
+  p { margin:.6rem 0; }
+  footer { max-width:38rem; margin:1.25rem auto 0; font-size:.85rem; color:#6b7280; }
+  footer a { color:#6b7280; }
+  @media (prefers-color-scheme: dark) {
+    body { background:#15171a; color:#e6e8ea; }
+    main { background:#1d2024; border-color:#2c3036; }
   }
-  document.documentElement.setAttribute("data-lang", l);
-  document.documentElement.setAttribute("lang", l);
-})();
-</script>
+</style>
 </head>
 <body>
+<main>
+  <h1>WellDone!</h1>
 
-<header>
-  <div class="langsw" role="group" aria-label="Sprache / Language">
-    <button type="button" id="btn-de" onclick="setLang('de')" aria-pressed="true" lang="de">DE</button>
-    <button type="button" id="btn-en" onclick="setLang('en')" aria-pressed="false" lang="en">EN</button>
-  </div>
-  <div class="wrap">
-    <img class="logo" src="welldone.png" alt="WellDone! Logo">
-    <h1>WellDone!</h1>
-    <p class="tagline l-de">Plattenbelegung &amp; Pipettierschema – kompatibel mit LightCycler® PRO, 480 und 96</p>
-    <p class="tagline l-en">Plate layout &amp; pipetting scheme – compatible with LightCycler® PRO, 480 and 96</p>
-    <p class="sub l-de">Ein kostenloses, vollständig <strong>offline</strong> laufendes Windows-Werkzeug fürs PCR-Setup.</p>
-    <p class="sub l-en">A free Windows tool for PCR setup — runs fully <strong>offline</strong>.</p>
-    <a id="dlbtn" class="btn" href="https://github.com/WellDone-PROmpter/WellDone/releases/latest">
-      <span class="l-de">⬇&nbsp;&nbsp;WellDone! herunterladen</span><span class="l-en">⬇&nbsp;&nbsp;Download WellDone!</span></a>
-    <p class="meta l-de">Immer die neueste Version · keine Installation · keine Administratorrechte<br>
-      <a href="https://github.com/WellDone-PROmpter/WellDone/releases">Alle Versionen &amp; Änderungen ansehen</a></p>
-    <p class="meta l-en">Always the latest version · no installation · no administrator rights<br>
-      <a href="https://github.com/WellDone-PROmpter/WellDone/releases">View all versions &amp; changes</a></p>
-    <p class="meta l-de" style="margin-top:16px;">Läuft die .exe bei dir nicht (IT-Sperre oder gehärtetes Windows)? Probier
-      <a href="https://welldone-prompter.github.io/WellDone-Go/"><strong>WellDone!&nbsp;Go</strong></a> — die Plattenbelegung direkt im Browser, ohne Installation.</p>
-    <p class="meta l-en" style="margin-top:16px;">The .exe won't run for you (IT restrictions or hardened Windows)? Try
-      <a href="https://welldone-prompter.github.io/WellDone-Go/"><strong>WellDone!&nbsp;Go</strong></a> — the plate setup right in your browser, no install.</p>
-  </div>
-</header>
+  <h2>Deutsch</h2>
+  <p><strong>Die Bereitstellung ist derzeit ausgesetzt.</strong></p>
+  <p>Downloads und die Browser-Version stehen vorübergehend nicht zur Verfügung,
+     bis die regulatorische Einordnung der Software abschließend geklärt ist.</p>
+  <p>Bereits installierte Versionen sind davon nicht betroffen und funktionieren
+     unverändert weiter. Es werden keine Daten erhoben oder übertragen.</p>
+  <p>Fragen: <a href="mailto:well.done.pcr.setup@gmail.com">well.done.pcr.setup@gmail.com</a></p>
 
-<section class="imgbox">
-  <div class="wrap"><img id="shot1" src="screenshot.png"
-    alt="WellDone! — Hauptfenster mit Proben-Platte, Assay-Bibliothek und belegter PCR-Platte"
-    data-alt-de="WellDone! — Hauptfenster mit Proben-Platte, Assay-Bibliothek und belegter PCR-Platte"
-    data-alt-en="WellDone! — main window with the sample plate, the assay library and the filled PCR plate"></div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2 class="l-de">Was kann WellDone!?</h2>
-    <h2 class="l-en">What does WellDone! do?</h2>
-    <ul class="feat">
-      <li class="l-de">Proben erfassen (manuell, Barcode-Scanner oder MP96/MP24-Import)</li>
-      <li class="l-en">Record samples (manually, barcode scanner or MP96/MP24 import)</li>
-      <li class="l-de">PCR-Platte automatisch belegen (96 &amp; 384)</li>
-      <li class="l-en">Fill the PCR plate automatically (96 &amp; 384)</li>
-      <li class="l-de">Pipettierschema als <strong>PDF</strong> erzeugen</li>
-      <li class="l-en">Create the pipetting scheme as a <strong>PDF</strong></li>
-      <li class="l-de">Plate-Setup exportieren für <strong>LightCycler PRO</strong>, <strong>480</strong> und <strong>96</strong></li>
-      <li class="l-en">Export the plate setup for <strong>LightCycler PRO</strong>, <strong>480</strong> and <strong>96</strong></li>
-      <li class="l-de">Auftrag für den <strong>MagNA Pure 96</strong> erstellen</li>
-      <li class="l-en">Create the order for the <strong>MagNA Pure 96</strong></li>
-      <li class="l-de">Oberfläche &amp; Handbuch in <strong>Deutsch &amp; Englisch</strong></li>
-      <li class="l-en">Interface &amp; manual in <strong>German &amp; English</strong></li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="sister l-de">
-      🧬 <strong>Schwester-App: <a href="https://welldone-prompter.github.io/PROmpter/">PROmpter</a></strong> — bereitet <em>nach</em> dem Lauf die LightCycler-PRO-Ergebnisse automatisch zu PDF-Bericht &amp; Excel auf. <em>WellDone = Vorbereitung, PROmpter = Ergebnis-Übersicht.</em>
-    </div>
-    <div class="sister l-en">
-      🧬 <strong>Sister app: <a href="https://welldone-prompter.github.io/PROmpter/">PROmpter</a></strong> — turns the LightCycler PRO results into a PDF report &amp; Excel automatically <em>after</em> the run. <em>WellDone = preparation, PROmpter = results overview.</em>
-    </div>
-  </div>
-</section>
-
-<section class="imgbox">
-  <div class="wrap">
-    <h2 class="center l-de">Fertige Ausgabe: das Pipettierschema</h2>
-    <h2 class="center l-en">The finished output: the pipetting scheme</h2>
-    <p class="lead l-de">Auf Knopfdruck als PDF — MasterMix-Tabelle und Plattenübersicht, farblich passend zur Belegung und Programmierung des LightCycler PRO.</p>
-    <p class="lead l-en">One click, one PDF — MasterMix table and plate overview, colour-matched to the plate setup and to the LightCycler PRO programming.</p>
-    <img id="shot2" src="pipetting.png"
-      alt="Pipettierschema-PDF: MasterMix-Tabelle und Plattenübersicht"
-      data-alt-de="Pipettierschema-PDF: MasterMix-Tabelle und Plattenübersicht"
-      data-alt-en="Pipetting scheme PDF: MasterMix table and plate overview">
-  </div>
-</section>
-
-<section>
-  <div class="wrap cards">
-    <div class="card">
-      <h3 class="l-de">📖 Handbuch</h3>
-      <h3 class="l-en">📖 Manual</h3>
-      <p class="l-de">Ausführliche Anleitung als PDF:</p>
-      <p class="l-en">Detailed instructions as a PDF:</p>
-      <p><a href="HANDBUCH.pdf">Handbuch (Deutsch)</a> · <a href="MANUAL_EN.pdf">Manual (English)</a></p>
-    </div>
-    <div class="card">
-      <h3 class="l-de">▶ Erster Start (SmartScreen)</h3>
-      <h3 class="l-en">▶ First start (SmartScreen)</h3>
-      <div class="l-de">
-        <p>Windows zeigt beim ersten Mal evtl. <em>„Der Computer wurde durch Windows geschützt"</em>:</p>
-        <ol>
-          <li>auf <strong>„Weitere Informationen"</strong> klicken</li>
-          <li>dann <strong>„Trotzdem ausführen"</strong></li>
-        </ol>
-        <p>Normal (App neu &amp; unsigniert), erscheint nur einmal.</p>
-      </div>
-      <div class="l-en">
-        <p>The first time, Windows may show <em>“Windows protected your PC”</em>:</p>
-        <ol>
-          <li>click <strong>“More info”</strong></li>
-          <li>then <strong>“Run anyway”</strong></li>
-        </ol>
-        <p>Normal (the app is new &amp; unsigned), appears only once.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2 class="l-de">Weitergeben</h2>
-    <h2 class="l-en">Pass it on</h2>
-    <p class="l-de"><strong>Weitergabe ist explizit erwünscht!</strong></p>
-    <p class="l-en"><strong>Sharing is explicitly encouraged!</strong></p>
-    <div class="share">
-      <code>welldone-prompter.github.io/WellDone</code>
-      <button type="button" class="copybtn" onclick="copyUrl(this)">
-        <span class="l-de">🔗 Link kopieren</span><span class="l-en">🔗 Copy link</span></button>
-    </div>
-    <p class="flyer l-de">📄 <a href="WellDone_OnePager_DE.pdf">One-Pager zum Ausdrucken &amp; Weitergeben (PDF)</a></p>
-    <p class="flyer l-en">📄 <a href="WellDone_OnePager_EN.pdf">One-pager to print &amp; share (PDF)</a></p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="warn l-de">
-      <strong>⚠️ Wichtiger Hinweis:</strong> WellDone! ist ein kostenloses, nicht validiertes Hilfswerkzeug zur Vorbereitung von qPCR-Läufen
-      (Probenerfassung, Plattenbelegung, MasterMix-Berechnung, Pipettierschema, Import-Dateien für die Geräte). Es wertet keine Messergebnisse aus.
-      WellDone! wird nicht als Medizinprodukt oder In-vitro-Diagnostikum in Verkehr gebracht, trägt keine CE-Kennzeichnung und wurde regulatorisch
-      nicht formal geprüft. Vor dem Routineeinsatz ist es im Qualitätsmanagement des Labors zu prüfen und freizugeben; Plattenbelegung, Kontrollen
-      und MasterMix-Mengen sind vor jedem Lauf zu kontrollieren. Die Haftung richtet sich nach den gesetzlichen Vorschriften.
-    </div>
-    <div class="warn l-en">
-      <strong>⚠️ Important note:</strong> WellDone! is a free, non-validated helper tool for preparing qPCR runs
-      (sample registration, plate layout, MasterMix calculation, pipetting scheme, import files for the instruments). It does not evaluate any measurement results.
-      WellDone! is not placed on the market as a medical device or in vitro diagnostic device, carries no CE marking and has not undergone a formal
-      regulatory assessment. Before routine use, the laboratory must check and release it within its quality management; check the plate layout,
-      the controls and the MasterMix volumes before every run. Liability is governed by the statutory provisions.
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <p class="l-de">Feedback &amp; Fehlerberichte: <a href="mailto:well.done.pcr.setup@gmail.com">well.done.pcr.setup@gmail.com</a>
-      · <a href="https://forms.gle/9QYvGAw1AXsfxYRk8">Online-Formular</a></p>
-    <p class="l-en">Feedback &amp; bug reports: <a href="mailto:well.done.pcr.setup@gmail.com">well.done.pcr.setup@gmail.com</a>
-      · <a href="https://forms.gle/9QYvGAw1AXsfxYRk8">Online form</a></p>
-    <p class="l-de">Freie, private Weitergabe erwünscht · <strong>kein Verkauf / kein kommerzieller Vertrieb</strong>.
-      WellDone! nutzt quelloffene Bibliotheken (PySide6/Qt — GNU LGPL v3; ReportLab — BSD).<br>
-      „Roche", „LightCycler" und „MagNA Pure" sind Marken der jeweiligen Inhaber. WellDone! ist ein <strong>unabhängiges, privates Projekt</strong>,
-      nicht von Roche geprüft oder verantwortet.</p>
-    <p class="l-en">Free, private sharing is welcome · <strong>no sale / no commercial distribution</strong>.
-      WellDone! uses open-source libraries (PySide6/Qt — GNU LGPL v3; ReportLab — BSD).<br>
-      “Roche”, “LightCycler” and “MagNA Pure” are trademarks of their respective owners. WellDone! is an <strong>independent, private project</strong>,
-      not reviewed or endorsed by Roche.</p>
-    <p class="l-de"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
-    <p class="l-en"><a href="impressum.html">Legal notice</a> · <a href="datenschutz.html">Privacy</a></p>
-  </div>
-</footer>
-
-<script>
-var PAGE_URL = "https://welldone-prompter.github.io/WellDone/";
-var META = {
-  de: { title:"WellDone! — Download",
-        desc:"WellDone! — kostenloses, offline laufendes Windows-Werkzeug für Plattenbelegung und Pipettierschema, kompatibel mit dem LightCycler® PRO, 480 und 96." },
-  en: { title:"WellDone! — Download",
-        desc:"WellDone! — free, fully offline Windows tool for plate layout and pipetting scheme, compatible with the LightCycler® PRO, 480 and 96." }
-};
-
-function curLang(){ return document.documentElement.getAttribute("data-lang") === "en" ? "en" : "de"; }
-
-// applyLang = nur anzeigen. setLang = anzeigen UND merken.
-// Getrennt, damit die bloss ERKANNTE Sprache nicht als bewusste Wahl gespeichert wird —
-// sonst folgt die Seite nie wieder einer geänderten Browsersprache.
-function applyLang(l){
-  document.documentElement.setAttribute("data-lang", l);
-  document.documentElement.setAttribute("lang", l);
-  document.getElementById("btn-de").setAttribute("aria-pressed", String(l === "de"));
-  document.getElementById("btn-en").setAttribute("aria-pressed", String(l === "en"));
-  document.title = META[l].title;
-  var m = document.getElementById("metadesc");
-  if(m){ m.setAttribute("content", META[l].desc); }
-  // Bild-Alternativtexte mitziehen (stehen als data-alt-de/-en am <img>).
-  var imgs = document.querySelectorAll("img[data-alt-" + l + "]");
-  for(var i = 0; i < imgs.length; i++){
-    imgs[i].setAttribute("alt", imgs[i].getAttribute("data-alt-" + l));
-  }
-}
-
-// Nur der echte Klick auf DE/EN merkt sich die Sprache.
-function setLang(l){
-  if(l !== "de" && l !== "en"){ l = "de"; }
-  try{ localStorage.setItem("lang", l); }catch(e){}
-  applyLang(l);
-}
-
-// Der Knopf enthält beide Sprach-Spans; die Rückmeldung ersetzt sie kurz durch reinen Text.
-// copyTimer/copyHtml sichern das Original nur beim ERSTEN Klick — sonst würde ein schneller
-// Zweitklick "✓ Kopiert" als Original sichern und der Knopf bliebe für immer darauf stehen.
-var copyTimer = null, copyHtml = null;
-function copyUrl(btn){
-  navigator.clipboard.writeText(PAGE_URL).then(function(){
-    if(copyTimer){ clearTimeout(copyTimer); } else { copyHtml = btn.innerHTML; }
-    btn.textContent = (curLang() === "de") ? "✓ Kopiert" : "✓ Copied";
-    copyTimer = setTimeout(function(){ btn.innerHTML = copyHtml; copyTimer = null; }, 1500);
-  });
-}
-
-// Beim Laden die im <head> ermittelte Sprache vollständig anwenden (Knöpfe, Titel, alt-Texte)
-// — bewusst applyLang, damit ein blosser Besuch die Browsersprach-Erkennung nicht einfriert.
-applyLang(curLang());
-
-// Download-Knopf auf die direkte, versionierte .exe der neuesten Release heben
-// (Fallback bleibt die Releases-Seite, falls die GitHub-API mal nicht antwortet).
-fetch("https://api.github.com/repos/WellDone-PROmpter/WellDone/releases/latest")
-  .then(function(r){ return r.json(); })
-  .then(function(d){
-    var assets = d.assets || [];
-    var exe = assets.find(function(x){ return x.name && x.name.toLowerCase().endsWith(".exe"); });
-    if(exe && exe.browser_download_url){ document.getElementById("dlbtn").href = exe.browser_download_url; }
-  }).catch(function(){});
-</script>
+  <h2>English</h2>
+  <p><strong>Distribution is currently suspended.</strong></p>
+  <p>Downloads and the browser version are temporarily unavailable while the
+     regulatory classification of the software is being clarified.</p>
+  <p>Installations already in place are not affected and continue to work
+     unchanged. No data is collected or transmitted.</p>
+  <p>Questions: <a href="mailto:well.done.pcr.setup@gmail.com">well.done.pcr.setup@gmail.com</a></p>
+</main>
+<footer><a href="impressum.html">Impressum</a> &middot; <a href="datenschutz.html">Datenschutz / Privacy</a></footer>
 
 </body>
 </html>
